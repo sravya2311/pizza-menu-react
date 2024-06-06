@@ -50,7 +50,7 @@ const pizzaData = [
 function App() {
   return (
     <div className="container">
-      <h1> Hello React!</h1>
+      
       <Header />
       <Menu />
       <Footer />
@@ -64,7 +64,7 @@ function Header() {
 
     return (
         <header  className="header">
-            <h1 style={style}>Fast React Pizza Co.</h1>
+            <h1 style={style}>Fast Pizza Co.</h1>
         </header>
         
     );
@@ -81,11 +81,17 @@ function Menu() {
       <h2>Our Menu</h2>
 
       {numPizzas >0 ? (
-        <ul className="pizzas">
-          {pizzaData.map((pizza) => (
-          <Pizza pizzaObj={pizza} key={pizza.name}/>
-          ))}
-        </ul>
+        <>
+          <p>
+          Authentic Italian cuisine. Multiple dishes to choose from. All
+          from our store oven, organic and delicious. Sure for you to come again!
+          </p>
+          <ul className="pizzas">
+            {pizzaData.map((pizza) => (
+              <Pizza pizzaObj={pizza} key={pizza.name}/>
+            ))}
+          </ul>
+        </>
       ) : <p>The Menu will be up soon! Thanks for visiting us.</p>} 
       
 
@@ -112,15 +118,18 @@ function Menu() {
 function Pizza({pizzaObj}) {
   console.log(pizzaObj);
 
-  if(pizzaObj.soldOut) return null;
+  //if(pizzaObj.soldOut) return null;
 
   return (
-    <li className="pizza">
+    <li className= {`pizza ${pizzaObj.soldOut ? "sold-out" : ""}` }>
       <img src={pizzaObj.photoName} alt={pizzaObj.name}/>
       <div>
         <h3>{pizzaObj.name}</h3>
         <p>{pizzaObj.ingredients}</p>
-        <span>{pizzaObj.price + 3}</span>
+
+        
+
+        <span>{pizzaObj.soldOut ? 'SOLD OUT' : pizzaObj.price}</span>
       </div>
     </li>
   );
@@ -129,7 +138,7 @@ function Pizza({pizzaObj}) {
 
 function Footer() {
   const hour = new Date().getHours();
-  const openHour = 20;
+  const openHour = 12;
   const closeHour = 22;
   const isOpen = hour >= openHour && hour <= closeHour;
   console.log(isOpen);
@@ -162,7 +171,7 @@ function Order({closeHour}) {
             The deliciousness is open unitl {closeHour}:00! Visit us 
             or order online!
           </p>
-          <button className="btn"> Oder </button>
+          <button className="btn"> Order </button>
     </div>
   )
 }

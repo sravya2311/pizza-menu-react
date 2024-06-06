@@ -14,8 +14,8 @@ body {
   font-family: 'Roboto Mono', sans-serif;
   color: #252525;
   font-weight: 400;
-  background-color: #f7f2e9;
-  border-bottom: 1.6rem solid #edc84b;
+  background-color: #cfc0a3;
+  border-bottom: 1.6rem solid #917724;
   min-height: 100vh;
   padding: 3.2rem;
   padding-bottom: 6rem;
@@ -39,7 +39,7 @@ body {
 
 .header h1 {
   /* Non-accessible color */
-  color: #edc84b;
+  color: #6d5f2f;
   /* color: #af8602; */
 
   text-transform: uppercase;
@@ -56,9 +56,9 @@ body {
 .header h1::after {
   display: block;
   content: '';
-  height: 3px;
-  width: 4rem;
-  background-color: #edc84b;
+  height: 5px;
+  width: 8rem;
+  background-color: #6e5f30;
   position: absolute;
   top: calc(50% - 1px);
 }
@@ -83,8 +83,8 @@ body {
 .menu h2 {
   display: inline-block;
   padding: 1rem 0;
-  border-top: 2px solid currentColor;
-  border-bottom: 2px solid currentColor;
+  border-top: 3px solid currentColor;
+  border-bottom: 3px solid currentColor;
   font-size: 2.4rem;
   text-transform: uppercase;
   letter-spacing: 3px;
@@ -92,7 +92,7 @@ body {
 }
 
 .menu > p {
-  font-size: 1.5rem;
+  font-size: 2rem;
   text-align: center;
   line-height: 1.6;
   width: 80%;
@@ -152,7 +152,7 @@ body {
 /* *************** */
 
 .footer {
-  font-size: 1.4rem;
+  font-size: 1.6rem;
 }
 
 .order {
@@ -166,16 +166,17 @@ body {
   color: inherit;
   font-family: inherit;
   border: none;
-  font-size: 1.4rem;
+  border-radius: 15px;
+  font-size: 2.4rem;
   font-weight: 500;
-  background-color: #edc84b;
+  background-color: #b1922c;
   padding: 1.4rem 3.2rem;
   cursor: pointer;
   transition: all 0.2s;
 }
 
 .btn:hover {
-  background-color: #e9bb24;
+  background-color: #bda453;
 }
 
 /*
